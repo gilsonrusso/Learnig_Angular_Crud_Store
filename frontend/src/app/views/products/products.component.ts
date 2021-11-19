@@ -9,9 +9,15 @@ import { Router } from "@angular/router";
 export class ProductsComponent implements OnInit {
   constructor(private router: Router) {}
 
+  valorPai: number = 5;
+
   ngOnInit(): void {}
 
   navigateToProductCreate(): void {
     this.router.navigate(["/products/create"]);
+  }
+
+  onMudouValor(evento: any) {
+    console.log(evento.novoValor);
   }
 }

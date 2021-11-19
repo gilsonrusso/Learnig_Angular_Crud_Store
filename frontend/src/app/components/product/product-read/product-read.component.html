@@ -1,4 +1,8 @@
 <div class="mat-elevation-z4">
+
+    <button (click)="aumentar()" >Aumentar</button>
+    <button (click)="diminuir()" >Diminuir</button>
+    {{valor}}
     <table mat-table [dataSource]="products$">
       <ng-container matColumnDef="id">
         <th mat-header-cell *matHeaderCellDef>Id</th>
