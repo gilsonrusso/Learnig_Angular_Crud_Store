@@ -34,6 +34,7 @@ import { StoreModule } from '@ngrx/store';
 import { appReducer } from "./store/app.state";
 import { EffectsModule } from '@ngrx/effects';
 import { ProductsEffectsService } from "./store/products-effects.service";
+import { DirectiveMouseEventDirective } from './directives/directive-mouse-event.directive';
 
 registerLocaleData(localePt)
 @NgModule({
@@ -46,6 +47,7 @@ registerLocaleData(localePt)
     ProductsComponent,
     ProductCreateComponent,
     ProductReadComponent,
+    DirectiveMouseEventDirective,
   ],
   imports: [
     BrowserModule,
