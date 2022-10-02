@@ -1,7 +1,11 @@
 <div class="mat-elevation-z4">
-    <button directiveMouseEvent  (click)="aumentar()" >Aumentar</button>
-    <button (click)="diminuir()" >Diminuir</button>
-    {{valor}}
+    <div class="searchProduct">
+      <input  [(ngModel)]="idProduct" value="idProduct">
+      <button *ngIf="!loading; else blockElse"  (click)="findProduct()">Bucar Produto</button>
+      <ng-template #blockElse>
+        <p>Carregando...</p>
+      </ng-template>
+    </div>
     <table mat-table [dataSource]="products$">
       <ng-container matColumnDef="id">
         <th mat-header-cell *matHeaderCellDef>Id</th>
@@ -16,6 +20,10 @@
         <td mat-cell *matCellDef="let row">
           {{ row.price | currency: "BRL" }}
         </td>
+      </ng-container>
+      <ng-container matColumnDef="statusProduct">
+        <th mat-header-cell *matHeaderCellDef>Status</th>
+        <td mat-cell *matCellDef="let row">{{ row.statusProduct }}</td>
       </ng-container>
 
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

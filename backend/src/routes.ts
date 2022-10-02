@@ -5,5 +5,7 @@ const router = Router();
 
 router.get("/products", productsController.list);
 router.post("/products", productsController.create);
+router.put("/products/:id", productsController.update);
+router.get("/products/:id", productsController.findOne);
 
 export { router };

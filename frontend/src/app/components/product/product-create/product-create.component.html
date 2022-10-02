@@ -17,6 +17,14 @@
         name="price"
       />
     </mat-form-field>
+    <mat-form-field>
+      <input
+        matInput
+        [(ngModel)]="product.statusProduct"
+        placeholder="Status do Produto"
+        name="statusProduct"
+      />
+    </mat-form-field>
   </form>
   <button mat-raised-button color="primary" (click)="createProduct()">
     Save

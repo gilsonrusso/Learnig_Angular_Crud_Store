@@ -26,4 +26,8 @@ export class ProductService {
   create(product: IProduct): Observable<IProduct> {
     return this.http.post<IProduct>(this.baseUrl, product);
   }
+
+  findOne(id: string): Observable<IProduct> {
+    return this.http.get<IProduct>(`${this.baseUrl}/${id}`);
+  }
 }
